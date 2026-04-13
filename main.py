@@ -1,8 +1,24 @@
-from src.data_processing import load_data, explore_data,fix_data_types
+from src.data_processing import (
+    convert_target,
+    load_data,
+    explore_data,
+    fix_data_types,
+    handling_missing_values,
+    drop_columns,
+    encode_data
+    
+)
 
 if __name__ == "__main__":
     df = load_data("data/raw/churn.csv")
+
     explore_data(df)
+
     df = fix_data_types(df)
-print("\n after the changes ")
-print(df.info())
+    df = handling_missing_values(df)
+    df = drop_columns(df)
+    df = convert_target(df)
+    df = encode_data(df)
+    print("\nFinal Data Info:\n")
+    df.info()
+    
