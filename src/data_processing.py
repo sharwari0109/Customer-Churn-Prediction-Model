@@ -13,3 +13,8 @@ def explore_data(df):
     print("DESCRIPTION")
     print(df.describe())
     print(df.nunique())
+    
+def fix_data_types(df):
+    df['TotalCharges'] = pd.to_numeric(df['TotalCharges'],errors = 'coerce')
+    return df
+    

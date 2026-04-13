@@ -6,15 +6,21 @@ venv/
 __pycache__/
 *.pyc
 
-# Environment variables (secrets)
+# Environment variables
 .env
 
-# Data files (optional - if large)
+# Data files
 data/
-*.csv
 
-# Jupyter Notebook checkpoints
+# Jupyter checkpoints
 .ipynb_checkpoints/
 
-# Mac system files
+# System files
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Editor
+.vscode/
