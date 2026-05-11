@@ -82,8 +82,9 @@ def run_feature_engineering(df: pd.DataFrame, target_column: str):
     df = create_complaint_features(df)
     
     df = encode_features(df)
-    
+    print(df.columns.tolist()) # Check the exact names
     X = df.drop(target_column, axis=1)
+    
     y = df[target_column]
     
     X = correlation_filter(X)
